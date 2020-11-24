@@ -1,0 +1,6 @@
+ - updated to angular 10
+ - upgrade all third-party modules
+ - updated 'fullcalendar' structure
+ - bug fixed datatable options like, colrecorder, searcihing, responsive
+ - change dark-logo
+ - import sweetalert2 css to third-party module scss
