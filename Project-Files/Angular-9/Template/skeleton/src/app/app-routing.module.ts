@@ -16,7 +16,11 @@ const routes: Routes = [
       {
         path: 'sample-page',
         loadChildren: () => import('./demo/pages/sample-page/sample-page.module').then(module => module.SamplePageModule)
-      }
+      },
+      {
+        path: 'users',
+        loadChildren: () => import('./demo/users/users.module').then(module => module.UsersModule)
+      },
     ]
   },
   {
