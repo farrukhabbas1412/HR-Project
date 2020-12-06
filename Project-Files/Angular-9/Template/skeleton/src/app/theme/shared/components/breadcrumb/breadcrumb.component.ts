@@ -126,5 +126,4 @@ export class BreadcrumbComponent implements OnInit {
     this.navigationList = result;
     this.titleService.setTitle('Med Core HR');
   }
-
 }

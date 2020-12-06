@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { AdminComponent } from './theme/layout/admin/admin.component';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {AdminComponent} from './theme/layout/admin/admin.component';
 import {AuthComponent} from './theme/layout/auth/auth.component';
 
 const routes: Routes = [
@@ -17,6 +17,10 @@ const routes: Routes = [
         path: 'sample-page',
         loadChildren: () => import('./demo/pages/sample-page/sample-page.module').then(module => module.SamplePageModule)
       },
+      // {
+      //   path: 'layout',
+      //   loadChildren: () => import('./demo/pages/layout/layout.module').then(module => module.LayoutModule)
+      // },
       {
         path: 'users',
         loadChildren: () => import('./demo/users/users.module').then(module => module.UsersModule)
@@ -34,4 +38,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

@@ -128,7 +128,7 @@ export class NavContentComponent implements OnInit, AfterViewInit {
       const up_parent = parent.parentElement.parentElement;
       const last_parent = up_parent.parentElement;
       if (parent.classList.contains('pcoded-hasmenu')) {
-        if (this.nextConfig['layout'] === 'vertical') {
+        if (this.nextConfig['layout'] === 'horizontal') {
           parent.classList.add('pcoded-trigger');
         }
         parent.classList.add('active');

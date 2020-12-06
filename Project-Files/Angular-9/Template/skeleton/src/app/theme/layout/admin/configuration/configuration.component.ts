@@ -48,7 +48,7 @@ export class ConfigurationComponent implements OnInit {
   ngOnInit() {
     this.styleSelectorToggle = false;
 
-    this.layoutType =  this.nextConfig.layoutType;
+    this.layoutType = this.nextConfig.layoutType;
     this.setLayout(this.layoutType);
 
     this.headerBackgroundColor = this.nextConfig.headerBackColor;
@@ -102,9 +102,9 @@ export class ConfigurationComponent implements OnInit {
         break;
       case baseHref + '/layout/horizontal':
         this.nextConfig.layout = 'horizontal';
-        this.nextConfig.navFixedLayout = false;
-        this.nextConfig.headerFixedLayout = false;
-        this.nextConfig.collapseMenu = false;
+        this.nextConfig.navFixedLayout = true;
+        this.nextConfig.headerFixedLayout = true;
+        this.nextConfig.collapseMenu = true;
         break;
       case baseHref + '/layout/horizontal-l2':
         this.nextConfig.layout = 'horizontal';
@@ -124,9 +124,9 @@ export class ConfigurationComponent implements OnInit {
       case baseHref + '/layout/box':
         this.nextConfig.layout = 'vertical';
         this.nextConfig.boxLayout = true;
-        this.nextConfig.navFixedLayout = true;
+        this.nextConfig.navFixedLayout = false;
         this.nextConfig.headerFixedLayout = false;
-        this.nextConfig.collapseMenu = true;
+        this.nextConfig.collapseMenu = false;
         break;
       case baseHref + '/layout/light':
         this.nextConfig.layout = 'vertical';
