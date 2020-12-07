@@ -186,9 +186,13 @@
             </button>
           </app-card>
           <app-card [hidHeader]="true" blockClass="border-top pro-det-edit collapse show" *ngIf="!editContact">
+            <div class="mb-5">
+              <a href="#" style="float: right">
+                <i class="feather" [ngClass]="editContactIcon"></i> Update Employment Status</a>
+            </div>
             <table class="table">
               <thead class="thead-light">
-              <th *ngFor="let header of headers" class='table-header'>{{header.name}}</th>
+              <th *ngFor="let header of headers" class='table-header'>{{header}}</th>
               </thead>
               <tbody>
               <tr>
@@ -201,33 +205,31 @@
             </table>
           </app-card>
           <app-card [hidHeader]="true" blockClass="border-top pro-det-edit collapse show" *ngIf="editContact">
-            <div class="form-group row">
-              <label class="col-sm-3 col-form-label font-weight-bolder">Mobile Number</label>
-
-            </div>
-            <div class="form-group row">
-              <label class="col-sm-3 col-form-label font-weight-bolder">Email Address</label>
-              <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="Ema" value="Demo@domain.com">
+            <form [formGroup]="headerForm" (ngSubmit)="addHeader()">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label font-weight-bolder">Table Header Title</label>
+                <div class="col-sm-9">
+                  <input type="text" formControlName="title" name="title" class="form-control"
+                         placeholder="Enter Tabel Header Name">
+                </div>
               </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-sm-3 col-form-label font-weight-bolder">Twitter</label>
-              <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="Full Name" value="@phonixcoded">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-9">
+                  <button type="submit" class="btn btn-primary">Save</button>
+                </div>
               </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-sm-3 col-form-label font-weight-bolder">Skype</label>
-              <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="Full Name" value="@phonixcoded demo">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-sm-3 col-form-label"></label>
-              <div class="col-sm-9">
-                <button type="button" class="btn btn-primary">Save</button>
-              </div>
+            </form>
+            <div class="row">
+              <table class="table">
+                <thead class="thead-light">
+                <tr *ngFor="let header of headers">
+                  <th class='table-header'>{{header}}
+                    <button type="button" class="btn btn-danger " style="float: right">Delete</button>
+                  </th>
+                </tr>
+                </thead>
+              </table>
             </div>
           </app-card>
         </div>
