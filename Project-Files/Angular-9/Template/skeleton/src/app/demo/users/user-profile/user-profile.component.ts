@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IAlbum, IEvent, Lightbox, LIGHTBOX_EVENT, LightboxConfig, LightboxEvent} from 'ngx-lightbox';
 import {Subscription} from 'rxjs';
 import {DomSanitizer} from '@angular/platform-browser';
@@ -22,6 +22,7 @@ export class UserProfileComponent implements OnInit {
 
   public albums: Array<IAlbum>;
   private subscription: Subscription;
+  headers: any;
 
   constructor(private lightbox: Lightbox, private lightboxEvent: LightboxEvent, private lighboxConfig: LightboxConfig, private sanitizer: DomSanitizer) {
     this.activeTab = 'home';
@@ -34,7 +35,12 @@ export class UserProfileComponent implements OnInit {
 
     this.editOtherInfo = false;
     this.editOtherInfoIcon = 'icon-edit';
-
+    this.headers = [
+      {'id': '1', name: 'First'},
+      {'id': '2', name: 'second'},
+      {'id': '3', name: 'Third'},
+      {'id': '4', name: 'Fourth'},
+    ]
     this.albums = [];
     for (let i = 1; i <= 6; i++) {
       const album = {
@@ -51,13 +57,13 @@ export class UserProfileComponent implements OnInit {
   ngOnInit() {
   }
 
-  public getSantizeUrl(url : string) {
+  public getSantizeUrl(url: string) {
     return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 
   open(index: number): void {
     this.subscription = this.lightboxEvent.lightboxEvent$.subscribe((event: IEvent) => this._onReceivedEvent(event));
-    this.lightbox.open(this.albums, index, { wrapAround: true, showImageNumberLabel: true });
+    this.lightbox.open(this.albums, index, {wrapAround: true, showImageNumberLabel: true});
   }
 
   private _onReceivedEvent(event: IEvent): void {

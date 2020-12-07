@@ -28,6 +28,11 @@
                     (click)="value()" name="exampleInputPassword1" id="exampleInputPassword1"
                     placeholder="Enter Html to design your banner " class="form-control"></textarea>
         </div>
+        <div style="height:140px">
+          <label for="exampleInputPassword1">Preview</label>
+          <div [innerHTML]="text|safeHtml">
+          </div>
+        </div>
         <div>
           <button type="button" class="btn btn-primary" style="float: right" (click)="value()">Save Changes</button>
         </div>

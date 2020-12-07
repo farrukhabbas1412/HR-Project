@@ -4,22 +4,11 @@
 </div>
 <ng-template #mainHeader>
   <div class="row">
-  <div class="m-header mb-15 ml-25">
-    <!--    <a href="javascript:" class="mobile-menu" id="mobile-collapse" (click)="navCollapse()"><span></span></a>-->
-    <a [routerLink]="['/dashboard/analytics']" class="b-brand">
-      <img id="main-logo" src="assets/images/logo.png" alt="" class="logo  mt-5"
-           style=" height: 90px;
-           margin-left: 230px; ">
-      <!--      <img src="assets/images/logo-icon.png" alt="" class="logo-thumb">-->
-    </a>
-
-    <a class="mob-toggler" [ngClass]="{'on' : this.menuClass}" href="javascript:" (click)="toggleMobOption()"><i
-      class="feather icon-more-vertical"></i></a>
-  </div>
-  <div *ngIf='text' [innerHTML]="text|safeHtml"></div>
+    <div *ngIf='text' [innerHTML]="text|safeHtml"></div>
   </div>
   <div class="collapse navbar-collapse" [style.display]="this.collapseStyle">
     <app-nav-left class="mr-auto"></app-nav-left>
     <app-nav-right class="ml-auto"></app-nav-right>
   </div>
 </ng-template>
+
