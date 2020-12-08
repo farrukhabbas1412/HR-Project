@@ -106,6 +106,12 @@ export class ConfigurationComponent implements OnInit {
         this.nextConfig.headerFixedLayout = true;
         this.nextConfig.collapseMenu = true;
         break;
+      case baseHref + '/users':
+        this.nextConfig.layout = 'horizontal';
+        this.nextConfig.navFixedLayout = true;
+        this.nextConfig.headerFixedLayout = true;
+        this.nextConfig.collapseMenu = true;
+        break;
       case baseHref + '/layout/horizontal-l2':
         this.nextConfig.layout = 'horizontal';
         this.nextConfig.subLayout = 'horizontal-2';

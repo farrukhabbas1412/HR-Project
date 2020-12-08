@@ -48,7 +48,7 @@ export class ConfigurationComponent implements OnInit {
   ngOnInit() {
     this.styleSelectorToggle = false;
 
-    this.layoutType =  this.nextConfig.layoutType;
+    this.layoutType = this.nextConfig.layoutType;
     this.setLayout(this.layoutType);
 
     this.headerBackgroundColor = this.nextConfig.headerBackColor;
@@ -78,7 +78,7 @@ export class ConfigurationComponent implements OnInit {
 
     switch (currentURL) {
       case baseHref + '/layout/static':
-        this.nextConfig.layout = 'vertical';
+        this.nextConfig.layout = 'horizontal';
         this.nextConfig.navFixedLayout = false;
         this.nextConfig.headerFixedLayout = false;
         break;
